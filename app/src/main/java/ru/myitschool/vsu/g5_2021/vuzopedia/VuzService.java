@@ -5,6 +5,6 @@ import retrofit2.http.GET;
 import ru.myitschool.vsu.g5_2021.vuzopedia.models.allVuzes;
 
 public interface VuzService {
-    @GET("/vuzes.json")
+    @GET("university.json")
     Call<allVuzes> getListOfAllVuzes();
 }
