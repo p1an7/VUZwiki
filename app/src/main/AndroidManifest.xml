@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ru.myitschool.vsu.g5_2021.vuzopedia">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,9 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vuzopedia">
         <activity
+            android:name=".FourthActivity"
+            android:exported="true"
+            android:label="@string/title_activity_fourth"
+            android:theme="@style/Theme.Vuzopedia.NoActionBar" />
+        <activity
             android:name=".ThirdActivity"
             android:exported="true" />
-
         <activity
             android:name=".secondActivity"
             android:exported="true" />
