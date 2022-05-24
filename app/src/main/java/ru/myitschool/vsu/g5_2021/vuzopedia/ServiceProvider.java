@@ -19,4 +19,5 @@ public class ServiceProvider {
                 .build();
         return retrofit.create(VuzService.class);
     }
+
 }

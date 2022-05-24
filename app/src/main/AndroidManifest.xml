@@ -11,9 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vuzopedia">
         <activity
-            android:name=".vgpu"
+            android:name=".ThirdActivity"
             android:exported="true" />
-        
+
         <activity
             android:name=".secondActivity"
             android:exported="true" />

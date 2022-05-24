@@ -2,17 +2,13 @@ package ru.myitschool.vsu.g5_2021.vuzopedia;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -37,8 +33,8 @@ public class secondActivity extends AppCompatActivity implements OnClickListener
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 vuzDescription vuz = adapter.getVuz(position);
-                Intent intent = new Intent(secondActivity.this, vgpu.class);
-                intent.putExtra(vgpu.VUZ_CODE_ARG, vuz.code);
+                Intent intent = new Intent(secondActivity.this, ThirdActivity.class);
+                intent.putExtra(ThirdActivity.VUZ_CODE_ARG, vuz.code);
                 startActivity(intent);
             }
         });
