@@ -9,7 +9,6 @@
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textSize="15dp"
-        android:text="hello"
         android:layout_marginRight="200dp"/>
     <TextView
         android:id="@+id/speciality_list_item.spec_bal"
@@ -17,7 +16,6 @@
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textSize="15dp"
-        android:text="bruh"
         android:layout_marginLeft="200dp"/>
 
 

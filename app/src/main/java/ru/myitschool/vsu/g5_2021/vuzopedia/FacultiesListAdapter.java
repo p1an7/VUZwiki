@@ -22,6 +22,9 @@ public class FacultiesListAdapter extends BaseAdapter {
             data2.addAll(d);
         notifyDataSetChanged();
     }
+    public facultyDescription getFac(int position){
+        return data2.get(position);
+    }
     @Override
     public int getCount() {
         return data2.size();

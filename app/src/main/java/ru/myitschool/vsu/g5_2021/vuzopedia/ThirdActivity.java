@@ -14,43 +14,44 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import ru.myitschool.vsu.g5_2021.vuzopedia.models.allFaculties;
 import ru.myitschool.vsu.g5_2021.vuzopedia.models.allVuzes;
+import ru.myitschool.vsu.g5_2021.vuzopedia.models.facultyDescription;
 import ru.myitschool.vsu.g5_2021.vuzopedia.models.vuzDescription;
 
 public class ThirdActivity extends AppCompatActivity implements View.OnClickListener {
-    public static final String FAC_CODE_ARG = "facCode";
+    public static final String VUZ_CODE_ARG = "vuzCode";
 Button backbuttonvgpu;
 private FacultiesListAdapter adapter2;
-    private String facCode = "";
+    private String vuzCode = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vgpu);
-        facCode = getIntent().getStringExtra(FAC_CODE_ARG);
-        backbuttonvgpu = (Button) findViewById(R.id.backbutton);
+        vuzCode = getIntent().getStringExtra(VUZ_CODE_ARG);
+        backbuttonvgpu = (Button) findViewById(R.id.backbuttonthird);
         backbuttonvgpu.setOnClickListener(this);
         ListView list = (ListView) findViewById(R.id.list2);
         adapter2 = new FacultiesListAdapter(this);
         list.setAdapter(adapter2);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                vuzDescription vuz = adapter2.get;
-                Intent intent = new Intent(ThirdActivity.this, ThirdActivity.class);
-                intent.putExtra(ThirdActivity., );
+                facultyDescription fac = adapter2.getFac(position);
+                Intent intent = new Intent(ThirdActivity.this, FourthActivity.class);
+                intent.putExtra(FourthActivity.FAC_CODE_ARG, fac.code);
+                intent.putExtra(FourthActivity.VUZ_CODE_ARG, vuzCode);
                 startActivity(intent);
-            };
+            }
+        });
+        loadFacultiesList();
     }
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.backbuttonthird:
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-                break;
-
+              finish();
         }
     }
     private void loadFacultiesList(){
-        ServiceProvider2.getService2().getListOfAllFaculties().enqueue(new Callback<allFaculties>() {
+        ServiceProvider.getService().getListOfAllFacultiesFor(vuzCode).enqueue(new Callback<allFaculties>() {
             @Override
             public void onResponse(Call<allFaculties> call, Response<allFaculties> response) {
                 if (response.isSuccessful()){

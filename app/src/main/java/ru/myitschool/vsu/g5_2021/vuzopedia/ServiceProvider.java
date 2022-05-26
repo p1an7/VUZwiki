@@ -14,7 +14,7 @@ public class ServiceProvider {
                 //.addInterceptor(interceptor).build();
         Retrofit retrofit = new Retrofit.Builder()
 
-                .baseUrl("https://raw.githubusercontent.com/p1an7/university.json/main/")
+                .baseUrl("https://raw.githubusercontent.com/p1an7/university2.json/main/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         return retrofit.create(VuzService.class);
