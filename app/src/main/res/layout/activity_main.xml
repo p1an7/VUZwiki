@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:textSize="25dp"
         android:textAlignment="center"
-        android:text="VUZOPEDIA"
+        android:text="vuzWIKI"
         android:textColor="@color/black"/>
 
     <Button
