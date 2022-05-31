@@ -21,6 +21,13 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="бал на бюджет"
+        android:layout_marginLeft="170dp"
+        android:textColor="@color/black"/>
+
 
     <ListView
         android:layout_width="match_parent"
